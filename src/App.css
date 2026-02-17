@@ -1,38 +1,118 @@
-.App {
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+header h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form */
+.add-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.add-form input,
+.add-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1 1 150px;
+}
+
+.add-form button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  border: none;
   color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.add-form button:hover {
+  background-color: #2980b9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.person-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.person-card:hover {
+  transform: translateY(-5px);
+}
+
+.person-card.student {
+  border-left: 5px solid #27ae60;
+}
+
+.person-card.teacher {
+  border-left: 5px solid #e74c3c;
+}
+
+.person-card.person {
+  border-left: 5px solid #2980b9;
+}
+
+.person-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.person-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Remove Button */
+.remove-btn {
+  padding: 6px 12px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #a93226;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .add-form {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
